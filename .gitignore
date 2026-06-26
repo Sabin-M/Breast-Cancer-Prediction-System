@@ -1,0 +1,10 @@
+.ml/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.pkl
+*.log

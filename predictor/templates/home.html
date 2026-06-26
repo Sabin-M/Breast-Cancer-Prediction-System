@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow-lg p-4">
+
+    <h2 class="text-center mb-4">
+        Breast Cancer Prediction
+    </h2>
+
+    <form method="POST" id="predictionForm">
+        {% csrf_token %}
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <label>Radius Mean</label>
+                <input type="number" step="any" name="radius_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Texture Mean</label>
+                <input type="number" step="any" name="texture_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Perimeter Mean</label>
+                <input type="number" step="any" name="perimeter_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Area Mean</label>
+                <input type="number" step="any" name="area_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Smoothness Mean</label>
+                <input type="number" step="any" name="smoothness_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Compactness Mean</label>
+                <input type="number" step="any" name="compactness_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Concavity Mean</label>
+                <input type="number" step="any" name="concavity_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Concave Points Mean</label>
+                <input type="number" step="any" name="concave_points_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Symmetry Mean</label>
+                <input type="number" step="any" name="symmetry_mean" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Fractal Dimension Mean</label>
+                <input type="number" step="any" name="fractal_dimension_mean" class="form-control" required>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">
+            Predict Cancer
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="alert alert-info mt-4 text-center">
+        <h4>{{ result }}</h4>
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
